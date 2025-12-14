@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Happy Birthday An 🎂</title>
+
+  <!-- confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto;
+      color:#222;
+    }
+    .card{
+      background:#fff;
+      max-width:360px;
+      width:92%;
+      border-radius:20px;
+      padding:22px;
+      text-align:center;
+      box-shadow:0 25px 70px rgba(0,0,0,.25);
+      animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+    img{
+      width:100%;
+      border-radius:16px;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:10px 0 6px;
+      font-size:26px;
+    }
+    p{
+      font-size:16px;
+      line-height:1.55;
+      margin:8px 0;
+    }
+    button{
+      margin-top:14px;
+      padding:12px 18px;
+      border:none;
+      border-radius:14px;
+      background:#ff5f7e;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow:0 10px 25px rgba(255,95,126,.4);
+    }
+    .from{
+      margin-top:14px;
+      font-size:14px;
+      opacity:.75;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="music" src="music.mp3" loop></audio>
+
+  <div class="card">
+    <img src="an.jpg" alt="bé An"/>
+    <h1>🎉 Chúc mừng sinh nhật em, An 🎂</h1>
+    <p>
+      Hôm nay em được quyền xinh hơn mọi ngày,  
+      được cười nhiều hơn,  
+      và được nhận nhiều yêu thương hơn một chút…  
+      nhất là từ anh 😌
+    </p>
+    <p>
+      Tuổi mới mong em luôn vui vẻ,  
+      mạnh mẽ khi cần, dịu dàng khi mệt,  
+      và nhớ là… có anh ở đây.
+    </p>
+    <button onclick="playAll()">Bấm nhẹ nè 💝</button>
+    <div class="from">— từ người luôn nghĩ về em</div>
+  </div>
+
+<script>
+  function playAll(){
+    document.getElementById('music').play();
+    confetti({
+      particleCount: 200,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+  }
+</script>
+
+</body>
+</html>
